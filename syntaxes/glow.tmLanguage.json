@@ -6,7 +6,13 @@
 			"include": "#keywords"
 		},
 		{
+			"include": "#reserved-words"
+		},
+		{
 			"include": "#strings"
+		},
+		{
+			"include": "#comments"
 		}
 	],
 	"repository": {

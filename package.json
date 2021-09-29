@@ -1,0 +1,25 @@
+{
+    "name": "glow-lang",
+    "displayName": "Glow Lang",
+    "description": "Syntax highlighting for glow lang",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "glow",
+            "aliases": ["Glow", "glow"],
+            "extensions": [".glow"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "glow",
+            "scopeName": "source.glow",
+            "path": "./syntaxes/glow.tmLanguage.json"
+        }]
+    }
+}

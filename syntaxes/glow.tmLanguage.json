@@ -7,13 +7,8 @@
 		},
 		{
 			"include": "#reserved-words"
-		},
-		{
-			"include": "#strings"
-		},
-		{
-			"include": "#comments"
 		}
+	
 	],
 	"repository": {
 		"keywords": {
@@ -25,35 +20,10 @@
 		"reserved-words": {
 			"patterns": [{ 
 				"name": "entity.name.function.glow",
-				"match": "\\b(verify!|assert!|publish!|require!|withdraw!|deposit!)\\b"
+				"match": "verify!|assert!|publish!|require!|withdraw!|deposit!"
 			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.glow",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.glow",
-					"match": "\\\\."
-				}
-			]
-		},
-		"comments": {
-			"patterns": [
-				{
-				"name": "comment.line.glow",
-				"begin": "//",
-				"end": "\n"
-
-				},
-				{
-				"name":"comment.block.glow",
-				"begin": "/*",
-				"end": "*/"
-				}
-			]
-		},
+		}
+		
 	},
 	"scopeName": "source.glow"
 }

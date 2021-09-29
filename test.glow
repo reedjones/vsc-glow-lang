@@ -1,0 +1,17 @@
+!withdraw
+!assert
+
+case 
+
+@interaction
+let crowdfunding =
+  (Organizer: Participant, Platform: Participant,
+   target: TokenAmount, expirationTime : Timestamp) => {
+   require! expirationTime > currentTime();
+
+   let rec crowdfund = (ledger : Table(TokenAmount <- Participant),
+                        totalPledged: TokenAmount) => {
+     assert! totalPledged == totalAmount(ledger);
+     choice {
+       | ForAllParticipant (NewPledger) {
+           @NewPledger amount =

@@ -8,7 +8,7 @@ Very Basic syntax highlighting
 
 ## TODO
 
-See: https://glow-lang.org/docs/Glow_Reference_Manual.html#
+See: https://glow-lang.org/docs/Glow_Reference_Manual.html#%28part._.Glow_.Language_.Grammar%29
 
 3.7 Glow Language Grammar
 

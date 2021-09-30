@@ -3,6 +3,7 @@
     "displayName": "Glow Lang",
     "description": "Syntax highlighting for glow lang",
     "version": "0.0.1",
+    "publisher":"reed-jones",
     "engines": {
         "vscode": "^1.60.0"
     },

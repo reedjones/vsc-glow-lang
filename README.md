@@ -4,12 +4,13 @@ Adds basic syntax highlighting for Glow lang https://glow-lang.org/
 
 ## Features
 
-Basic syntax highlighting 
+Very Basic syntax highlighting 
 
-## Known Issues
+## TODO
 
-Need to highlight the '|' character 
-Need to highlight the '@' character followed by TERM 
+See: https://glow-lang.org/docs/Glow_Reference_Manual.html#
+
+3.7 Glow Language Grammar
 
 ## Release Notes
 

@@ -30,7 +30,7 @@
 			"patterns": [
 				{
 					"name": "entity.name.function.glow",
-					"match":"\\@(.*)"
+					"match":"\\@([a-zA-z0-9]*)" 
 				}
 			]
 		}

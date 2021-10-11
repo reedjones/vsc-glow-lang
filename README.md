@@ -16,7 +16,5 @@ See: https://glow-lang.org/docs/Glow_Reference_Manual.html
 
 Will be adding to the project as the MOOC goes on
 
-### 1.0.0
 
-Initial release of vsc-glow-lang
 

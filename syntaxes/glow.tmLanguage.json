@@ -1,18 +1,7 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Glow",
-	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#reserved-words"
-		},
-		{
-			"include": "#decorators"
-		}
-	
-	],
+
 	"repository": {
 		"keywords": {
 			"patterns": [{
@@ -20,6 +9,64 @@
 				"match": "\\b(switch|case|let|return|data|choice|loop)\\b"
 			}]
 		},
+		"commentBlock": {
+			"name": "comment.block",
+			"begin": "/\\*",
+			"end": "\\*/",
+			"patterns": [
+			  {
+				"include": "#commentBlock"
+			  }
+			]
+		  },
+		  "commentLine": {
+			"match": "//.*",
+			"name": "comment.line"
+		  },
+		"punctuations": {
+			"patterns": [
+			  {
+				"match": "~",
+				"name": "punctuation.definition.keyword"
+			  },
+			  {
+				"match": ";",
+				"name": "punctuation.terminator"
+			  },
+			  {
+				"match": "\\.",
+				"name": "punctuation.accessor"
+			  },
+			  {
+				"match": "\\,",
+				"name": "punctuation.separator"
+			  },
+			  {
+				"match": "\\?|:",
+				"name": "punctuation.separator"
+			  },
+			  {
+				"match": "\\|(?!\\|)",
+				"name": "punctuation.separator"
+			  },
+			  {
+				"match": "\\{",
+				"name": "punctuation.section.braces.begin"
+			  },
+			  {
+				"match": "\\}",
+				"name": "punctuation.section.braces.end"
+			  },
+			  {
+				"match": "\\(",
+				"name": "punctuation.section.parens.begin"
+			  },
+			  {
+				"match": "\\)",
+				"name": "punctuation.section.parens.end"
+			  }
+			]
+		  },
 		"reserved-words": {
 			"patterns": [{ 
 				"name": "entity.name.function.glow",
@@ -36,5 +83,148 @@
 		}
 		
 	},
+	"operator": {
+		"patterns": [
+		  {
+			"match": "->|\\|\\||&&|\\+\\+|\\*\\*|\\+\\.|\\+|-\\.|-|\\*\\.|\\*|/\\.|/|\\.\\.\\.|\\.\\.|===|==|\\^|:=|!|>=(?! *\\?)|<=|=",
+			"name": "keyword.operator keyword"
+		  },
+		  {
+			"match": "\\|>",
+			"name": "invalid.deprecated"
+		  }
+		]
+	  },
+	  "constructor": {
+		"patterns": [
+		  {
+			"match": "\\b[A-Z][0-9a-zA-Z_]*\\b",
+			"name": "variable.function variable.other"
+		  },
+		  {
+			"match": "(#)(\\.\\.\\.)?([a-zA-Z][0-9a-zA-Z_]*)\\b",
+			"captures": {
+			  "1": {
+				"name": "punctuation.definition.keyword"
+			  },
+			  "2": {
+				"name": "punctuation.definition.keyword"
+			  },
+			  "3": {
+				"name": "variable.function variable.other"
+			  }
+			}
+		  },
+		  {
+			"match": "(#)",
+			"captures": {
+			  "1": {
+				"name": "punctuation.definition.keyword"
+			  }
+			}
+		  }
+		]
+	  },
+	  "bracketAccess": {
+		"patterns": [
+		  {
+			"match": "\\[",
+			"name": "punctuation.section.brackets.begin"
+		  },
+		  {
+			"match": "\\]",
+			"name": "punctuation.section.brackets.end"
+		  }
+		]
+	  },
+	  "list": {
+		"patterns": [
+		  {
+			"match": "\\b(list)(\\{)",
+			"captures": {
+			  "1": {
+				"name": "keyword"
+			  },
+			  "2": {
+				"name": "punctuation.section.braces.begin"
+			  }
+			}
+		  },
+		  {
+			"match": "\\}",
+			"name": "punctuation.section.braces.end"
+		  }
+		]
+	  },
+	  "attribute": {
+		"patterns": [
+		  {
+			"match": "(%%?|@@?)([A-Za-z_][A-Za-z0-9_\\.]*)",
+			"captures": {
+			  "1": {
+				"name": "storage.modifier punctuation.definition.annotation"
+			  },
+			  "2": {
+				"patterns": [
+				  {
+					"match": "bs\\.send\\.pipe",
+					"name": "invalid.deprecated"
+				  },
+				  {
+					"match": "splice",
+					"name": "invalid.illegal"
+				  },
+				  {
+					"match": "(bs\\.)?([A-Za-z_][A-Za-z0-9_\\.]*)",
+					"captures": {
+					  "1": {
+						"name": "invalid.deprecated"
+					  },
+					  "2": {
+						"name": "variable.annotation"
+					  }
+					}
+				  },
+				  {
+					"match": "[A-Za-z_][A-Za-z0-9_\\.]*",
+					"name": "variable.annotation"
+				  }
+				]
+			  }
+			}
+		  }
+		]
+	  },
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#reserved-words"
+		},
+		{
+			"include": "#decorators"
+		},
+		{
+			"include":"#punctuations"
+		},
+		{
+			"include": "#commentBlock"
+		},
+		{
+			"include": "#commentLine"
+		},
+		{
+			"include": "#attribute"
+		},
+		{
+			"include": "#list"
+		}, 
+		{
+			"inlcude": "#bracketAccess"
+		}
+
+	
+	],
 	"scopeName": "source.glow"
 }

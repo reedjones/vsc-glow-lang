@@ -2,7 +2,7 @@
     "name": "glow-lang",
     "displayName": "Glow Lang",
     "description": "Syntax highlighting for glow lang",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher":"reed-jones",
     "engines": {
         "vscode": "^1.1.0"

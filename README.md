@@ -11,10 +11,20 @@ Very Basic syntax highlighting
 See: https://glow-lang.org/docs/Glow_Reference_Manual.html
 
 
+## Demo
+
+![alt text](https://github.com/reedjones/vsc-glow-lang/raw/main/vscode_glow_lang_highlight.png)
+
 
 ## Release Notes
 
-Will be adding to the project as the MOOC goes on
+Work in progress. Will be adding to the project as the MOOC goes on, 
+contributions welcome. 
+
+
+
+
+
 
 
 

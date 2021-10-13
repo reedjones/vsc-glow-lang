@@ -195,6 +195,14 @@
 		  }
 		]
 	  },
+	  "function": {
+		"patterns": [
+		  {
+			"match": "=>",
+			"name": "storage.type.function keyword.declaration.function"
+		  }
+		]
+	  },
 	"patterns": [
 		{
 			"include": "#keywords"
@@ -222,7 +230,10 @@
 		}, 
 		{
 			"inlcude": "#bracketAccess"
-		}
+		},
+		{
+			"include": "#function"
+		  }
 
 	
 	],
